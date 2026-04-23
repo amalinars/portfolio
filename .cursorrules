@@ -1,0 +1,33 @@
+# Next.js Architecture Rules (Feature-Based)
+
+You are an expert Next.js developer. Every time you create or modify code in this repository, you must follow these rules to ensure the project remains maintainable and AI-friendly.
+
+## 1. Directory Structure
+- **`src/app/`**: ONLY for routing/layouts/metadata. No complex logic here. Each page should just import a "Page Template" or "Feature" component.
+- **`src/features/`**: The core of the app. Group code by domain (e.g., `auth`, `dashboard`, `portfolio`).
+  - Each feature folder should ideally contain: `components/`, `hooks/`, `services/`, `types/`.
+- **`src/components/`**: Only for generic, reusable UI components (e.g., Buttons, Modals, Inputs) or Layout ornaments.
+- **`src/lib/`**: Generic utility functions or shared library initializations (Prisma, Axios).
+
+## 2. Component Logic
+- Keep UI components "pure" when possible.
+- Move business logic (API calls, data processing) to custom hooks within the feature folder or Server Actions.
+- Use **Server Components** by default. Only use `'use client'` when interactivity is required.
+
+## 3. Data Fetching & Mutations
+- Use **Server Actions** for all mutations.
+- Prefer fetching data in Server Components or using specialized `services/` files within features.
+
+## 4. TypeScript & Naming
+- Use PascalCase for components.
+- Use kebab-case for filenames.
+- Always define interfaces/types for props. Avoid `any`.
+- Use descriptive names (e.g., `features/auth/components/login-form.tsx` instead of `components/Login.tsx`).
+
+## 5. State Management
+- Use **Zustand** for global/feature state if necessary.
+- Keep state as local as possible.
+
+## 6. AI Context (Crucial)
+- When starting a task, look for the relevant folder in `src/features/`.
+- Maintain "Local Context": Do not let logic leak out of its feature folder into global folders unless truly shared across the whole app.
