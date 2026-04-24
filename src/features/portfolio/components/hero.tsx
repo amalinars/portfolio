@@ -78,7 +78,7 @@ export function Hero() {
                     <div className="absolute inset-0 bg-primary/20 blur-[48px] rounded-full group-hover:bg-primary/40 transition-all duration-700 will-change-[filter,background-color]" />
                     <div className="relative h-full min-h-[600px] rounded-[3.5rem] overflow-hidden border border-border group-hover:border-primary/50 transition-colors will-change-transform">
                         <Image
-                            src="/risma-profile.png"
+                            src="/risma-profile.jpg"
                             alt="Profile"
                             fill
                             priority
