@@ -36,7 +36,7 @@ export function ProjectShowcase() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.6, delay: i * 0.05 }}
                         >
-                            {project.status === 'completed' ? (
+                            {['completed', 'in-develop'].includes(project.status) ? (
                                 <Link href={`/projects/${project.slug}`} className={`block group cursor-pointer will-change-transform`}>
                                     <ProjectCard project={project} />
                                 </Link>
@@ -70,28 +70,11 @@ function ProjectCard({ project }: { project: any }) {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className={`object-cover transition-transform duration-700 grayscale ${['coming-soon', 'in-develop'].includes(project.status) ? 'scale-105 opacity-40' : 'group-hover:scale-110 group-hover:grayscale-0'}`}
+                    className={`object-cover transition-transform duration-700 grayscale ${project.status === 'coming-soon' ? 'scale-105 opacity-40' : 'group-hover:scale-110 group-hover:grayscale-0'}`}
                 />
 
-                {['coming-soon', 'in-develop'].includes(project.status) && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                        <div className="px-6 py-2 border-2 border-white/20 bg-black/80 rounded-full">
-                            <span className="text-white text-xs font-black uppercase tracking-[0.3em]">
-                                {project.status === 'in-develop' ? 'In Develop' : 'Coming Soon'}
-                            </span>
-                        </div>
-                    </div>
-                )}
-
-                {/* Floating Badge */}
-                {project.status === 'completed' && (
-                    <div className="absolute top-6 right-6 p-4 bg-white text-black rounded-full scale-0 group-hover:scale-100 transition-transform duration-500">
-                        <ArrowUpRight className="w-6 h-6" />
-                    </div>
-                )}
-
                 {/* Hover Overlay */}
-                {project.status === 'completed' && (
+                {['completed', 'in-develop'].includes(project.status) && (
                     <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
                         style={{ backgroundColor: project.color }}
@@ -101,14 +84,21 @@ function ProjectCard({ project }: { project: any }) {
 
             <div className="flex justify-between items-start">
                 <div>
-                    <h3 className={`text-2xl font-black tracking-tighter mb-1 uppercase italic transition-colors ${project.status === 'completed' ? 'group-hover:text-primary' : 'text-muted-foreground'}`}>
+                    <h3 className={`text-2xl font-black tracking-tighter mb-1 uppercase italic transition-colors ${['completed', 'in-develop'].includes(project.status) ? 'group-hover:text-primary' : 'text-muted-foreground'}`}>
                         {project.title}
                     </h3>
                     <p className="text-muted-foreground text-sm uppercase font-bold tracking-widest">{project.category}</p>
                 </div>
-                <span className="text-xs font-black border border-border px-3 py-1 rounded-full text-muted-foreground">
-                    {project.year}
-                </span>
+                <div className="flex items-center gap-2">
+                    {project.status !== 'completed' && (
+                        <span className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest ${project.status === 'in-develop' ? 'bg-primary/20 text-primary border border-primary/30' : 'bg-muted text-muted-foreground border border-border'}`}>
+                            {project.status === 'in-develop' ? 'In Develop' : 'Coming Soon'}
+                        </span>
+                    )}
+                    <span className="text-xs font-black border border-border px-3 py-1 rounded-full text-muted-foreground">
+                        {project.year}
+                    </span>
+                </div>
             </div>
         </>
     );
