@@ -70,13 +70,15 @@ function ProjectCard({ project }: { project: any }) {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className={`object-cover transition-transform duration-700 grayscale ${project.status === 'coming-soon' ? 'scale-105 opacity-40' : 'group-hover:scale-110 group-hover:grayscale-0'}`}
+                    className={`object-cover transition-transform duration-700 grayscale ${['coming-soon', 'in-develop'].includes(project.status) ? 'scale-105 opacity-40' : 'group-hover:scale-110 group-hover:grayscale-0'}`}
                 />
 
-                {project.status === 'coming-soon' && (
+                {['coming-soon', 'in-develop'].includes(project.status) && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/60">
                         <div className="px-6 py-2 border-2 border-white/20 bg-black/80 rounded-full">
-                            <span className="text-white text-xs font-black uppercase tracking-[0.3em]">Coming Soon</span>
+                            <span className="text-white text-xs font-black uppercase tracking-[0.3em]">
+                                {project.status === 'in-develop' ? 'In Develop' : 'Coming Soon'}
+                            </span>
                         </div>
                     </div>
                 )}

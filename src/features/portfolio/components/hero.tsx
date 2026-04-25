@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Magnetic from "@/components/animations/magnetic";
 
@@ -50,21 +50,12 @@ export function Hero() {
                             </motion.button>
                         </Magnetic>
 
-                        <div className="flex gap-4">
-                            {[Github, Linkedin, Twitter].map((Icon, i) => (
-                                <Magnetic key={i}>
-                                    <a href="#" className="w-20 h-20 rounded-full border border-border flex items-center justify-center hover:bg-white hover:text-black transition-all hover:rotate-12">
-                                        <Icon className="w-8 h-8" />
-                                    </a>
-                                </Magnetic>
-                            ))}
-                        </div>
+                        {/* Social links removed as requested */}
                     </div>
 
                     {/* Stats or Badges */}
                     <div className="absolute top-12 right-12 hidden md:flex flex-col gap-3 items-end opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Next.js 15 Focus</div>
-                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest">TypeScript Specialist</div>
+                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Laravel Specialist</div>
                     </div>
                 </motion.div>
 

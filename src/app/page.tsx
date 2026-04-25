@@ -77,10 +77,10 @@ export default function Home() {
 
           <div className="flex flex-col gap-12 items-start lg:items-end">
             <a
-              href="mailto:risma@example.com"
+              href="mailto:keymarlin28@gmail.com"
               className="group text-4xl md:text-6xl font-black flex items-center gap-4 hover:tracking-widest transition-all duration-500"
             >
-              HI@RISMA.DEV
+              KEYMARLIN28@GMAIL.COM
               <motion.div
                 animate={{ rotate: [0, 90, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
@@ -92,15 +92,13 @@ export default function Home() {
 
             <div className="flex gap-12 text-sm font-black uppercase italic">
               <a href="#" className="hover:underline underline-offset-8 transition-all">Instagram</a>
-              <a href="#" className="hover:underline underline-offset-8 transition-all">LinkedIn</a>
-              <a href="#" className="hover:underline underline-offset-8 transition-all">GitHub</a>
             </div>
           </div>
         </div>
       </section>
 
       <footer className="py-8 px-6 text-[10px] font-black uppercase tracking-[0.5em] text-center text-muted-foreground bg-black overflow-hidden whitespace-nowrap">
-        DESIGNED FOR THE BOLD • ENGINEERED FOR THE FUTURE • © 2026 RISMA • BUILT WITH NEXT.JS 15 •
+        DESIGNED FOR THE BOLD • ENGINEERED FOR THE FUTURE • © 2026 RISMA •
       </footer>
     </main>
   );

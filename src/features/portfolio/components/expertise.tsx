@@ -8,7 +8,6 @@ import {
     Zap,
     LayoutDashboard,
     Smartphone,
-    Figma,
     Code2
 } from "lucide-react";
 
@@ -20,7 +19,6 @@ const stack = [
     { name: "Laravel", Icon: Zap },
     { name: "Postgres", Icon: LayoutDashboard },
     { name: "Typescript", Icon: Smartphone },
-    { name: "Figma", Icon: Figma },
 ];
 
 export function Expertise() {
