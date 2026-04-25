@@ -16,9 +16,14 @@ export function ProjectShowcase() {
                         <span className="text-stroke">EXHIBITIONS</span>
                     </h2>
                     <div className="text-right hidden md:block">
-                        <p className="text-muted-foreground uppercase text-xs font-bold tracking-[0.3em]">
-                            Showing 08 Of 12
-                        </p>
+                        <motion.p 
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="text-muted-foreground uppercase text-xs font-bold tracking-[0.3em]"
+                        >
+                            Showing {projects.length.toString().padStart(2, '0')} Of {projects.length.toString().padStart(2, '0')}
+                        </motion.p>
                     </div>
                 </div>
 
