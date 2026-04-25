@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, Briefcase, GraduationCap, Heart } from "lucide-react";
+import { User, Briefcase, GraduationCap, Globe } from "lucide-react";
 
 const stats = [
     { label: "Programming Exp.", value: "5+", Icon: Briefcase },
-    { label: "Upwork Veteran", value: "1YR", Icon: Heart },
+    { label: "Global Projects", value: "USA/UK+", Icon: Globe },
     { label: "Satisfied Clients", value: "20+", Icon: User },
     { label: "Tech Stacks", value: "10+", Icon: GraduationCap },
 ];

@@ -26,16 +26,16 @@ export function Hero() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
                             </span>
-                            Mastering the Digital Realm
+                            Crafting Digital Experiences
                         </div>
-
+ 
                         <h1 className="text-7xl md:text-[11rem] font-black leading-[0.75] tracking-tighter mb-12 italic">
                             FULLSTACK <br />
-                            <span className="text-stroke">ALCHEMIST</span>
+                            <span className="text-stroke">DEVELOPER</span>
                         </h1>
-
+ 
                         <p className="text-xl md:text-3xl text-muted-foreground max-w-2xl leading-tight mb-20">
-                            I distill complex requirements into <span className="text-white font-bold italic underline decoration-primary decoration-4 underline-offset-8">seamless</span> digital architectures.
+                            I transform complex ideas into <span className="text-white font-bold italic underline decoration-primary decoration-4 underline-offset-8">high-performance</span> digital architectures.
                         </p>
                     </div>
 
@@ -63,8 +63,8 @@ export function Hero() {
 
                     {/* Stats or Badges */}
                     <div className="absolute top-12 right-12 hidden md:flex flex-col gap-3 items-end opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Next.js 15 PRORITIZED</div>
-                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest">TS EXPERT LEVEL</div>
+                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">Next.js 15 Focus</div>
+                        <div className="bg-border/50 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black uppercase tracking-widest">TypeScript Specialist</div>
                     </div>
                 </motion.div>
 
